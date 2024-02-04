@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HEART DEMO</title>
+<style>
+body {
+    background-color: #ffceed;
+    font-family: 'Arial', sans-serif; /* Fallback font */
+    /* Include a romantic font similar to the one used previously */
+    font-family: 'Brush Script MT', cursive; /* This line will override the above if the font is available */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Stack items vertically */
+    height: 100vh;
+    margin: 0;
+    overflow: hidden; /* Prevent scrolling caused by heart animations */
+}
+.heart {
+    z-index: 999;
+    animation: heartfade 6s linear;
+    position: absolute;
+}
+.heart:before,
+.heart:after {
+    content: "";
+    background-color: #fc2a62;
+    position: absolute;
+    height: 30px;
+    width: 45px;
+    border-radius: 15px 0px 0px 15px;
+}
+.heart:before {
+    transform: rotate(45deg);
+}
+.heart:after {
+    left: 10.5px;
+    transform: rotate(135deg);
+}
+@keyframes heartfade {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+.message {
+    position: fixed; /* Keep the message visible and positioned regardless of heart animations */
+    top: 20%; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fc2a62; /* Matching the heart color */
+    text-align: center;
+    font-size: 24px; /* Adjust based on your preference */
+    z-index: 1000; /* Ensure it's above the hearts */
+}
+</style>
+</head>
+<body>
+
+<div class="message">
+    เฮ้ที่รัก, วันนี้คุณเป็นอย่างไรบ้าง?
+</div>
+
+<script>
+// Your existing JavaScript code remains unchanged
+</script>
+</body>
+</html>
